@@ -13,7 +13,7 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.13.0'  # Ensure Flutter 3.13.0 with compatible Dart SDK
+          flutter-version: '3.19.0'  # Ensure Flutter 3.13.0 with compatible Dart SDK
 
       # Force update Dart SDK
       - name: Install Dart SDK
