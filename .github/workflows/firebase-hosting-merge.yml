@@ -14,6 +14,12 @@ jobs:
         with:
           flutter-version: '3.13.0'  # Ensure compatible Dart SDK
 
+      - name: Run Flutter Doctor
+        run: flutter doctor  # Check Flutter and Dart SDK versions
+
+      - name: Install Dart SDK
+        run: flutter precache --force  # Force download Dart SDK
+
       - run: flutter pub get  # Fetch dependencies
       - run: flutter build web  # Build web version
 
