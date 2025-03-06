@@ -19,8 +19,9 @@ jobs:
           echo "$(pwd)/flutter/bin" >> $GITHUB_PATH
 
       # Verify Flutter and Dart versions
-      - name: Verify Flutter Version
-        run: flutter --version
+      - name: Install Dart SDK
+        run: flutter version 3.29.0
+
 
       - name: Verify Dart Version
         run: dart --version
