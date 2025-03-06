@@ -1,1 +1,39 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"smart-timetable-generation","appId":"1:109126583991:android:a140b5d81c8c56a677ef32","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"smart-timetable-generation","configurations":{"android":"1:109126583991:android:a140b5d81c8c56a677ef32","ios":"1:109126583991:ios:19b1ea2b84e7739377ef32","macos":"1:109126583991:ios:19b1ea2b84e7739377ef32","web":"1:109126583991:web:a8506358dc1ef85d77ef32","windows":"1:109126583991:web:54e7478c4d8bd2d977ef32"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "smart-timetable-generation",
+          "appId": "1:109126583991:android:a140b5d81c8c56a677ef32",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "smart-timetable-generation",
+          "configurations": {
+            "android": "1:109126583991:android:a140b5d81c8c56a677ef32",
+            "ios": "1:109126583991:ios:19b1ea2b84e7739377ef32",
+            "macos": "1:109126583991:ios:19b1ea2b84e7739377ef32",
+            "web": "1:109126583991:web:a8506358dc1ef85d77ef32",
+            "windows": "1:109126583991:web:54e7478c4d8bd2d977ef32"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
