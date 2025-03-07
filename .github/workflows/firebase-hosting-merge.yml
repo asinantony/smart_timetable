@@ -11,20 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Manually install Flutter 3.19.0 to ensure correct version
-      - name: Install Flutter Manually
+      # Install Flutter 3.27.3 (matches your local version)
+      - name: Install Flutter
         run: |
-          git clone https://github.com/flutter/flutter.git -b 3.19.0 --depth 1
+          git clone https://github.com/flutter/flutter.git -b 3.27.3 --depth 1
           echo "FLUTTER_ROOT=$(pwd)/flutter" >> $GITHUB_ENV
           echo "$(pwd)/flutter/bin" >> $GITHUB_PATH
 
       # Verify Flutter and Dart versions
-      - name: Install Dart SDK
-        run: flutter version 3.29.0
-
-
-      - name: Verify Dart Version
-        run: dart --version
+      - name: Verify Flutter Version
+        run: flutter --version
 
       # Clear pub cache to avoid old SDK versions
       - name: Clear Pub Cache
