@@ -1,43 +1,37 @@
-name: Deploy to Firebase Hosting on merge
+# name: Deploy to Firebase Hosting on merge
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build_and_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+# jobs:
+#   build_and_deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
 
-      # Install Flutter 3.27.3 (matches your local version)
-      - name: Install Flutter
-        run: |
-          git clone https://github.com/flutter/flutter.git -b 3.27.3 --depth 1
-          echo "FLUTTER_ROOT=$(pwd)/flutter" >> $GITHUB_ENV
-          echo "$(pwd)/flutter/bin" >> $GITHUB_PATH
+#       - name: Install Flutter
+#         run: |
+#           git clone https://github.com/flutter/flutter.git -b 3.27.3 --depth 1
+#           echo "FLUTTER_ROOT=$(pwd)/flutter" >> $GITHUB_ENV
+#           echo "$(pwd)/flutter/bin" >> $GITHUB_PATH
 
-      # Verify Flutter and Dart versions
-      - name: Verify Flutter Version
-        run: flutter --version
+#       - name: Verify Flutter Version
+#         run: flutter --version
 
-      # Clear pub cache to avoid old SDK versions
-      - name: Clear Pub Cache
-        run: flutter pub cache clean
+#       - name: Clear Pub Cache
+#         run: flutter pub cache clean
 
-      # Fetch dependencies
-      - name: Get Dependencies
-        run: flutter pub get
+#       - name: Get Dependencies
+#         run: flutter pub get
 
-      # Build web version
-      - name: Build Web
-        run: flutter build web
+#       - name: Build Web
+#         run: flutter build web
 
-      # Deploy to Firebase
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SMART_TIMETABLE_GENERATION }}
-          channelId: live
-          projectId: smart-timetable-generation
+#       - uses: FirebaseExtended/action-hosting-deploy@v0
+#         with:
+#           repoToken: ${{ secrets.GITHUB_TOKEN }}
+#           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SMART_TIMETABLE_GENERATION }}
+#           channelId: live
+#           projectId: smart-timetable-generation
